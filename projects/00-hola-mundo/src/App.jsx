@@ -2,10 +2,12 @@ import './App.css'
 import React from 'react'
 import { TwitterFollowCard } from './TwitterFollowCard'
 export function App() {
+
     return (
-        <>
-            <TwitterFollowCard userName="everdream" name="Emerson Mendoza" />
-            <TwitterFollowCard userName="everdream" name="Emerson Mendoza" />
-        </>
+        <section className='App'>
+            <TwitterFollowCard isFollowing userName="everdream" name="Emerson Mendoza" />
+            <TwitterFollowCard isFollowing={false} userName="shxto" name="Artista Ero" />
+            <TwitterFollowCard isFollowing userName="AQUINOby_02" name="Aquino" />
+        </section>
     )
 }
