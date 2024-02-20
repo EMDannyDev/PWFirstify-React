@@ -2,12 +2,20 @@ import './App.css'
 import React from 'react'
 import { TwitterFollowCard } from './TwitterFollowCard'
 export function App() {
-
+    const everdream = { isFollowing: true, userName: 'Everdream' }
     return (
         <section className='App'>
-            <TwitterFollowCard isFollowing userName="everdream" name="Emerson Mendoza" />
-            <TwitterFollowCard isFollowing={false} userName="shxto" name="Artista Ero" />
-            <TwitterFollowCard isFollowing userName="AQUINOby_02" name="Aquino" />
+            <TwitterFollowCard {...everdream}>
+                <strong>Emerson Mendoza</strong>
+            </TwitterFollowCard>
+
+            <TwitterFollowCard isFollowing userName="AQUINOby_02">
+                <h1>Aquino</h1>
+            </TwitterFollowCard>
+
+            <TwitterFollowCard isFollowing >
+                <strong>Miguel Angel</strong>
+            </TwitterFollowCard>
         </section>
     )
 }
