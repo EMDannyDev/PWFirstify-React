@@ -19,8 +19,8 @@ const users = [
         isFollowing: true
     },
     {
-        userName: 'Everdream',
-        name: 'Ever',
+        userName: 'Erickson',
+        name: 'ericson',
         isFollowing: false
     }
 ]
