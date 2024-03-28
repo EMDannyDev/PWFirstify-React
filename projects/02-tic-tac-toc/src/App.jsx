@@ -27,6 +27,9 @@ function App() {
   const [turn, setTurn] = useState(TURNS.x)
 
   const updateBoard = (index) => {
+    // Nose actualiza esta poscion si ya tiene algo
+    if (board[index]) return
+
     const newBoard = [...board]
     newBoard[index] = turn
     setBoard(newBoard)
