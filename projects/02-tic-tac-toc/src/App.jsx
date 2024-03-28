@@ -1,12 +1,11 @@
 
+import { useState } from 'react'
 import './App.css'
 
 const TURNS = {
   x: 'x',
   o: 'o'
 }
-
-const board = Array(9).fill(null)
 
 const Square = ({ children, updateBoard, index }) => {
   return (
@@ -16,6 +15,9 @@ const Square = ({ children, updateBoard, index }) => {
   )
 }
 function App() {
+  const [board, setBoard] = useState(['x', 'o',
+    'x', 'x', 'o', 'o', 'x', 'x', 'o'])
+
   return (
     <main className='board'>
       <h1>Tic Tac Toc</h1>
@@ -27,7 +29,7 @@ function App() {
                 key={index}
                 index={index}
               >
-                {index}
+                {board[index]}
               </Square>
             )
           })
