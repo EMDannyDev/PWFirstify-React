@@ -61,6 +61,13 @@ function App() {
     setTurn(TURNS.x)
     setWinner(null)
   }
+
+  const checkEndGame = (newBoard) => {
+    // Revisa si hay un empate
+    // Si no hay mas espacios vacios
+    return newBoard.every((square) => square != null)
+  }
+
   const updateBoard = (index) => {
     // No se actualiza esta poscion si ya tiene algo
     // o si ya se tiene un ganador 
@@ -76,12 +83,15 @@ function App() {
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
       setWinner(newWinner)
+    } else if (checkEndGame(newBoard)) {
+      setWinner(false)
     }
   }
 
   return (
     <main className='board'>
       <h1>Tic Tac Toc</h1>
+      <button onClick={resetGame}>Reset del juego</button>
       <section className='game'>
         {
           board.map((_, index) => {
