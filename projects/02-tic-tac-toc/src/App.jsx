@@ -6,7 +6,7 @@ import { Square } from './components/Square'
 import { TURNS } from './constans'
 import { checkWinnerFrom, checkEndGame } from './logic/board'
 import { WinnerModal } from './components/WinnerModal'
-import { saveGame, resetGame } from './logic/storage'
+import { saveGame } from './logic/storage'
 
 function App() {
 
@@ -28,7 +28,8 @@ function App() {
     setTurn(TURNS.x)
     setWinner(null)
 
-    resetGame()
+    window.localStorage.removeItem('board')
+    window.localStorage.removeItem('turn')
   }
 
   const updateBoard = (index) => {
