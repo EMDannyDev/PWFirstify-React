@@ -5,6 +5,8 @@ function App() {
 
   const [enabled, setEnabled] = useState(false)
   const [position, setPosition] = useState({ x: 0, y: 0 })
+
+  // Pointer move
   useEffect(() => {
     console.log('effect', { enabled })
 
@@ -22,6 +24,17 @@ function App() {
     }
   }, [enabled])
 
+  // [] -> solo se ejecuta una vez cuando se monta el componente
+  // [enabled] -> se ejecuta cuando cambia enabled y cuando se monta el componente
+  // undefined -> se ejecuta una vez que se renderiza el componente
+
+  // cambia a body el className 
+  useEffect(() => {
+    document.body.classList.toggle('no-cursor', enabled)
+    return () => {
+      document.body.classList.toggle('no-cursor')
+    }
+  }, [enabled])
 
 
   return (

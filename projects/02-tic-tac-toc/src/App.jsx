@@ -13,18 +13,19 @@ function App() {
   const [board, setBoard] = useState(() => {
     const boardFromStorage = window.localStorage.getItem('board')
     if (boardFromStorage) return JSON.parse(boardFromStorage)
-    return Array(9).fill(null)
+
+    return Array(42).fill(null)
   })
 
   const [turn, setTurn] = useState(() => {
     const turnFromStorage = window.localStorage.getItem('turn')
     return turnFromStorage ?? TURNS.x
   })
-  // null nohay ganador, false hay un empate
+  // null no hay ganador, false hay un empate
   const [winner, setWinner] = useState(null)
 
   const resetGame = () => {
-    setBoard(Array(9).fill(null))
+    setBoard(Array(42).fill(null))
     setTurn(TURNS.x)
     setWinner(null)
 
