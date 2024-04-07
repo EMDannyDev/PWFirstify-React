@@ -3,11 +3,12 @@ import { WINNER_COMBOS } from "../constans"
 export const checkWinnerFrom = (checkBoard) => {
     // Revision de combinaciones para ver al ganador
     for (const combo of WINNER_COMBOS) {
-        const [a, b, c] = combo
+        const [a, b, c, d] = combo
         if (
             checkBoard[a] &&
             checkBoard[a] == checkBoard[b] &&
-            checkBoard[a] == checkBoard[c]
+            checkBoard[a] == checkBoard[c] &&
+            checkBoard[a] == checkBoard[d]
         ) {
             return checkBoard[a]
         }
